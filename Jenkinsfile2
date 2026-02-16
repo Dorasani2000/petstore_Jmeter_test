@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'dorasanamma/jmetertesting:v1.0'
-        TEST_REPO = 'https://github.com/Dorasani2000/JMeter-Scripts.git'
+        TEST_REPO = 'https://github.com/Dorasani2000/petstore_Jmeter_test.git'
     }
 
     stages {
@@ -46,7 +46,7 @@ pipeline {
                     git config --global user.name "Dorasani2000"
 
                     rem Pull latest changes first
-                    git pull https://%GIT_USER%:%GIT_PASS%@github.com/Dorasani2000/JMeter-Scripts.git main
+                    git pull https://%GIT_USER%:%GIT_PASS%@github.com/Dorasani2000/petstore_Jmeter_test.git main
 
                     rem Create results folder if not exists
                     if not exist results mkdir results
@@ -60,7 +60,7 @@ pipeline {
 
                     git commit -m "Automated: Add latest JMeter results for build #%BUILD_NUM%" || echo Nothing to commit
 
-                    git push https://%GIT_USER%:%GIT_PASS%@github.com/Dorasani2000/JMeter-Scripts.git main
+                    git push https://%GIT_USER%:%GIT_PASS%@github.com/Dorasani2000/petstore_Jmeter_test.git main
                     """
                 }
             }
