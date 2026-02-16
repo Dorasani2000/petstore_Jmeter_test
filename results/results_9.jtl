@@ -1,0 +1,20 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1771236871514,1908,https://petstore.octoperf.com/actions/Catalog.action,200,,Thread Group 1-1,text,true,,5664,178,1,1,https://petstore.octoperf.com/actions/Catalog.action?cookie=%24%7BC_cookiesession%7D,1890,0,1696
+1771236875206,228,https://petstore.octoperf.com/actions/Account.action?signonForm=,200,,Thread Group 1-1,text,true,,4095,211,1,1,https://petstore.octoperf.com/actions/Account.action?signonForm=,228,0,0
+1771236879852,379,https://petstore.octoperf.com/actions/Account.action,200,,Thread Group 1-1,text,true,,5430,717,1,1,https://petstore.octoperf.com/actions/Catalog.action,185,0,0
+1771236879852,185,https://petstore.octoperf.com/actions/Account.action-0,302,,Thread Group 1-1,,true,,230,518,1,1,https://petstore.octoperf.com/actions/Account.action,185,0,0
+1771236880040,191,https://petstore.octoperf.com/actions/Account.action-1,200,,Thread Group 1-1,text,true,,5200,199,1,1,https://petstore.octoperf.com/actions/Catalog.action,188,0,0
+1771236880287,258,https://petstore.octoperf.com/actions/Catalog.action,200,,Thread Group 1-1,text,true,,5200,199,1,1,https://petstore.octoperf.com/actions/Catalog.action,258,0,0
+1771236882358,177,https://petstore.octoperf.com/actions/Catalog.action?viewCategory=&categoryId=BIRDS,200,,Thread Group 1-1,text,true,,3864,233,1,1,https://petstore.octoperf.com/actions/Catalog.action?viewCategory=&categoryId=REPTILES,177,0,0
+1771236882638,207,https://petstore.octoperf.com/actions/Catalog.action?viewProduct=&productId=AV-CB-01,200,,Thread Group 1-1,text,true,,4032,231,1,1,https://petstore.octoperf.com/actions/Catalog.action?productId=AV-CB-01&viewProduct=,207,0,0
+1771236883647,181,https://petstore.octoperf.com/actions/Cart.action?addItemToCart=&workingItemId=EST-18,200,,Thread Group 1-1,text,true,,4880,232,1,1,https://petstore.octoperf.com/actions/Cart.action?workingItemId=EST-18&addItemToCart=,181,0,0
+1771236884235,204,https://petstore.octoperf.com/actions/Order.action?newOrderForm=,200,,Thread Group 1-1,text,true,,5630,211,1,1,https://petstore.octoperf.com/actions/Order.action?newOrderForm=,203,0,0
+1771236887075,237,https://petstore.octoperf.com/actions/Order.action,200,,Thread Group 1-1,text,true,,4855,897,1,1,https://petstore.octoperf.com/actions/Order.action,237,0,0
+1771236888169,376,https://petstore.octoperf.com/actions/Order.action,200,,Thread Group 1-1,text,true,,4780,715,1,1,https://petstore.octoperf.com/actions/Order.action,376,0,0
+1771236888699,284,https://petstore.octoperf.com/actions/Order.action?newOrder=&confirmed=true,200,,Thread Group 1-1,text,true,,5490,222,1,1,https://petstore.octoperf.com/actions/Order.action?confirmed=true&newOrder=,283,0,0
+1771236892687,264,https://petstore.octoperf.com/actions/Catalog.action,200,,Thread Group 1-1,text,true,,5200,199,1,1,https://petstore.octoperf.com/actions/Catalog.action,263,0,0
+1771236893383,581,https://petstore.octoperf.com/actions/Account.action?signoff=,200,,Thread Group 1-1,text,true,,5278,407,1,1,https://petstore.octoperf.com/actions/Catalog.action,179,0,0
+1771236893383,179,https://petstore.octoperf.com/actions/Account.action?signoff=-0,302,,Thread Group 1-1,,true,,230,208,1,1,https://petstore.octoperf.com/actions/Account.action?signoff=,179,0,0
+1771236893562,402,https://petstore.octoperf.com/actions/Account.action?signoff=-1,200,,Thread Group 1-1,text,true,,5048,199,1,1,https://petstore.octoperf.com/actions/Catalog.action,401,0,0
+1771236893984,194,https://petstore.octoperf.com/actions/Catalog.action,200,,Thread Group 1-1,text,true,,4973,199,1,1,https://petstore.octoperf.com/actions/Catalog.action,193,0,0
+1771236894186,4,Debug Sampler,200,OK,Thread Group 1-1,text,true,,691,0,1,1,null,0,0,0
