@@ -20,7 +20,7 @@ pipeline {
             steps {
                 bat """
                 docker run --rm -v %cd%\\:/tests -w /tests ${IMAGE_NAME} ^
-                -n -t Account_Summary_Balance.jmx -l results.jtl -j jmeter.log
+                -n -t petstore.octoperf.com_new.jmx -l results.jtl -j jmeter.log
                 """
             }
         }
