@@ -22,9 +22,9 @@ pipeline {
                 if exist results_pet.jtl del results_pet.jtl
                 if exist jmeter.log del jmeter.log
                 if exist report rmdir /s /q report
-                if exist integerfile.txt copy /Y integerfile.txt results\integer_%BUILD_NUM%.txt
-                if exist vowelfile.txt copy /Y vowelfile.txt results\vowel_%BUILD_NUM%.txt
-                if exist consonantsfile.txt copy /Y consonantsfile.txt results\consonant_%BUILD_NUM%.txt
+                if exist integerfile.txt del integerfile.txt
+                if exist vowelfile.txt del vowelfile.txt
+                if exist consonantsfile.txt del consonantsfile.txt
                 docker run --rm -v %cd%\\:/tests -w /tests ${IMAGE_NAME} ^
                 -n -t petstore.octoperf.com_new.jmx -l results_pet.jtl -j jmeter.log -e -o report
                 """
@@ -35,9 +35,7 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'results_pet.jtl, report/**', allowEmptyArchive: true
                 archiveArtifacts artifacts: 'jmeter.log, report/**', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'integerfile.txt', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'vowelfile.txt', allowEmptyArchive: true
-                archiveArtifacts artifacts: 'consonantsfile.txt', allowEmptyArchive: true
+                archiveArtifacts artifacts: '*.txt', allowEmptyArchive: true
             }
         }
 
@@ -63,9 +61,9 @@ pipeline {
                     rem Append build number to results file and folder
                     set BUILD_NUM=%BUILD_NUMBER%
                     copy /Y results_pet.jtl, results\\results_%BUILD_NUM%.jtl
-                    copy /Y integerfile.txt results\\integer_%BUILD_NUM%.txt
-                    copy /Y vowelfile.txt results\\vowel_%BUILD_NUM%.txt
-                    copy /Y consonantsfile.txt results\\consonant_%BUILD_NUM%.txt
+                    if exist integerfile.txt copy /Y integerfile.txt results/integer_%BUILD_NUM%.txt
+                    if exist vowelfile.txt copy /Y vowelfile.txt results/vowel_%BUILD_NUM%.txt
+                    if exist consonantsfile.txt copy /Y consonantsfile.txt results/consonant_%BUILD_NUM%.txt
                     xcopy /E /I /Y report results\\report_%BUILD_NUM%
 
                     git add results\\
