@@ -20,14 +20,14 @@ pipeline {
             steps {
                 bat """
                 docker run --rm -v %cd%\\:/tests -w /tests ${IMAGE_NAME} ^
-                -n -t petstore.octoperf.com_new.jmx -l results_pet.jtl -j jmeter.log -e -o report.html
+                -n -t petstore.octoperf.com_new.jmx -l results_pet.jtl -j jmeter.log -e -o report
                 """
             }
         }
 
         stage('Archive Results') {
             steps {
-                archiveArtifacts artifacts: 'results.jtl, report/**', allowEmptyArchive: true
+                archiveArtifacts artifacts: 'results_pet.jtl, report/**', allowEmptyArchive: true
                 archiveArtifacts artifacts: 'jmeter.log, report/**', allowEmptyArchive: true
             }
         }
@@ -53,7 +53,7 @@ pipeline {
 
                     rem Append build number to results file and folder
                     set BUILD_NUM=%BUILD_NUMBER%
-                    copy /Y results.jtl results\\results_%BUILD_NUM%.jtl
+                    copy /Y results_pet.jtl, results\\results_%BUILD_NUM%.jtl
                     xcopy /E /I /Y report results\\report_%BUILD_NUM%
 
                     git add results\\
