@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout Tests') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'GitHub_PAT',
+                    credentialsId: 'git_pat',
                     url: TEST_REPO
             }
         }
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'GitHub_PAT',
+                        credentialsId: 'git_pat',
                         usernameVariable: 'GIT_USER',
                         passwordVariable: 'GIT_PASS'
                     )
