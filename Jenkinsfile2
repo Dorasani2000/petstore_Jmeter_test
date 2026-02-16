@@ -32,7 +32,6 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'results_pet.jtl, report/**', allowEmptyArchive: true
                 archiveArtifacts artifacts: 'jmeter.log, report/**', allowEmptyArchive: true
-                archiveArtifacts artifacts: '*.txt', allowEmptyArchive: true
             }
         }
 
@@ -58,9 +57,6 @@ pipeline {
                     rem Append build number to results file and folder
                     set BUILD_NUM=%BUILD_NUMBER%
                     copy /Y results_pet.jtl, results\\results_%BUILD_NUM%.jtl
-                    if exist integerfile.txt copy /Y integerfile.txt results/integer_%BUILD_NUM%.txt
-                    if exist vowelfile.txt copy /Y vowelfile.txt results/vowel_%BUILD_NUM%.txt
-                    if exist consonantsfile.txt copy /Y consonantsfile.txt results/consonant_%BUILD_NUM%.txt
                     xcopy /E /I /Y report results\\report_%BUILD_NUM%
 
                     git add results\\
