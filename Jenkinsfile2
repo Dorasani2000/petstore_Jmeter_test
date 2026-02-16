@@ -32,6 +32,9 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'results_pet.jtl, report/**', allowEmptyArchive: true
                 archiveArtifacts artifacts: 'jmeter.log, report/**', allowEmptyArchive: true
+                archiveArtifacts artifacts: 'integerfile.txt', allowEmptyArchive: true
+                archiveArtifacts artifacts: 'vowelfile.txt', allowEmptyArchive: true
+                archiveArtifacts artifacts: 'consonantsfile.txt', allowEmptyArchive: true
             }
         }
 
