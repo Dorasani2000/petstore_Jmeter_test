@@ -57,6 +57,7 @@ pipeline {
                     rem Append build number to results file and folder
                     set BUILD_NUM=%BUILD_NUMBER%
                     copy /Y results_pet.jtl, results\\results_%BUILD_NUM%.jtl
+                    copy /Y jmeter.log results\\jmeter_log_%BUILD_NUM%.log
                     xcopy /E /I /Y report results\\report_%BUILD_NUM%
 
                     git add results\\
